@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Version Control') {
             steps {
-                git url: 'https://github.com/SyedSohail123/sohail-game-of-life.git'
+                git url: 'https://github.com/SyedSohail123/sohail-game-of-life.git',
                     branch: 'declarative'
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Post build Steps') {
             steps {
-                archiveArtifacts onlyIfSuccessful: true
+                archiveArtifacts onlyIfSuccessful: true,
                                  artifacts: '**/target/gameoflife.war'
                 junit testResults: '**/target/surefire-reports/TEST-*/xml'
             }
