@@ -1,13 +1,12 @@
 pipeline {
-    agent {label: 'MAVEN_JDK8'}
+    agent { label: 'MAVEN_JDK8' }
     tools {
-        maven 'apache-maven-3.6.3'
         jdk 'JDK_8_UBUNTU'
     }
     stages {
         stage('Version Control') {
             steps {
-                git 'https://github.com/SyedSohail123/sohail-game-of-life.git'
+                git url: 'https://github.com/SyedSohail123/sohail-game-of-life.git'
                     branch: 'declarative'
             }
         }
