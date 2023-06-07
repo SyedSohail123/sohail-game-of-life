@@ -3,8 +3,7 @@ node('MAVEN_JDK8') {
         git url: 'https://github.com/SyedSohail123/sohail-game-of-life.git',
             branch: 'scripted'
     }
-    stage('build the code') {
-    	sh 'export PATH="/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"',
+    stage('build the code') {    	
         sh 'mvn package'
     }
     stage('archive the artifacts') {
