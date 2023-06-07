@@ -19,7 +19,7 @@ pipeline {
             steps {
                 archiveArtifacts onlyIfSuccessful: true,
                                  artifacts: '**/target/gameoflife.war'
-                junit testResults: '**/target/surefire-reports/TEST-*/xml'
+                junit testResults: '**/surefire-reports/TEST-*.xml'
             }
         }
     }
